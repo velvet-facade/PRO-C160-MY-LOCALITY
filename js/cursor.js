@@ -7,20 +7,17 @@ AFRAME.registerComponent("cursor-listener", {
     this.handleMouseEnterEvents();
     this.handleMouseLeaveEvents();
   },
-  handleClickEvents: function() {
+  handleClickEvents: function () {
+    //Cursor 'click' Events
     this.el.addEventListener("click", evt => {
       const placesContainer = document.querySelector("#places-container");
-
       const { state } = placesContainer.getAttribute("tour");
-
+      
       if (state === "places-list") {
-
         const id = this.el.getAttribute("id");
-
         const placesId = [
           "dubai", "singapore"
         ];
-
         if (placesId.includes(id)) {
           placesContainer.setAttribute("tour", {
             state: "view",
@@ -28,19 +25,15 @@ AFRAME.registerComponent("cursor-listener", {
           });
         }
       }
-
-      if (state === "view") {
-        //this.handleViewState();
-        console.log("Hello world")
-      }
-      if (state === "change-view") {
-        //this.handleViewState();
-        console.log("Hello world");
-      }
+      /*const skyEl = document.querySelector("#main-container");
+      skyEl.setAttribute("material", {
+        src: `./assets/360_images/${id}/${title}.jpg`,
+        color: "#fff"
+      });*/
     });
   },
- /*handleViewState: function() {
-    const el = this.el;
+ handleViewState: function() {
+    /*const el = this.el;
 
     const id = el.getAttribute("id");
 
@@ -49,7 +42,7 @@ AFRAME.registerComponent("cursor-listener", {
     const { selectedItemId } = placesContainer.getAttribute("cursor-listener");
 
     //Keeping all the images as id of the images with .jpg extension
-    const sideViewPlacesId = ["place-0", "place-1"];
+    const sideViewPlacesId = ["place-1", "place-2"];
 
     if (sideViewPlacesId.includes(id)) {
       
@@ -65,8 +58,9 @@ AFRAME.registerComponent("cursor-listener", {
         color: "#fff"
       });
      
-    }
-  },*/
+    }*/
+  
+  },
   handleMouseEnterEvents: function() {
     // Mouse Enter Events
     this.el.addEventListener("mouseenter", () => {

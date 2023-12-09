@@ -46,12 +46,24 @@ AFRAME.registerComponent("tour", {
     },
     showView: function() {
       const { selectedCard } = this.data;
-  
+      const id = this.el.getAttribute("id");
+      const thumbNailsRef = [
+        {
+          id: "dubai",
+          title: "Dubai",
+          url: "./assets/thumbnails/dubai-final.jpg"
+        },
+        {
+          id: "singapore",
+          title: "Singapore",
+          url: "./assets/thumbnails/singapore.jpg"
+        },
+      ];
       //Set the 360 degree image to the sky element.
       const skyEl = document.querySelector("#main-container");
   
       skyEl.setAttribute("material", {
-        //src: `./assets/360_images/${selectedCard}/place-0.jpg`,
+        src: `./assets/360_images/${selectedCard}/dubai.jpg`,
         color: "#fff"
       });
     },
