@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRO-C160: MY LOCALITY</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script>
+    <script src="js/tour.js"></script>
+    <script src="js/cursor.js"></script>
+</head>
+<body>
+    <a-scene id="main-scene">
+        <a-sky id="main-container" radius="5000" color="#2f3f5e"></a-sky>
+        <a-entity id="places-container" cursor-listener tour></a-entity>
+
+      <!-- Different Side View of the Places -->
+      <a-entity
+        id="side-view-container"
+        place-side-view
+        cursor-listener
+      ></a-entity>
+
+      <!-- CAMERA -->
+      <a-camera id="camera" wasd-controls="enabled:false;">
+        <!-- App Title -->
+        <a-entity
+          id="app-title"
+          position="0 0.73 -1"
+          text="font: exo2bold; align: center; width: 2; color: #fff; value: Its time to revisit some of the place I've been to!"
+        >
+          <a-entity
+            id="app-subtitle"
+            position="0 -0.1 0"
+            text="font: dejavu; align: center; width: 1; color: #fff; value: Travel Around The World"
+          ></a-entity>
+        </a-entity>
+
+        <!-- CURSOR -->
+        <a-entity
+          id="camera-cursor"
+          cursor
+          position="0 0 -1"
+          geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
+          material="color: #fff; shader: flat"
+        >
+        </a-entity>
+      </a-camera>
+
+
+    </a-scene>   
+</body>
+</html>
